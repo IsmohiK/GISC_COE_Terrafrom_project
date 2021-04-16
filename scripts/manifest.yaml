@@ -8,7 +8,7 @@ params:
     instance_type: t2.micro
     profile: dev
     region: us-west-2
-    resourceName: dev_app
+    name: dev_app
     s3_bucket_name: gisc-terraform-remote-backend-state-dev
     environment: dev
     s3_path: dev/terraform.tfstate
@@ -19,7 +19,7 @@ params:
     instance_type: t2.micro
     profile: test
     region: us-west-2
-    resourceName: test_app
+    name: test_app
     s3_bucket_name: gisc-terraform-remote-backend-state-test
     environment: test
     s3_path: test/terraform.tfstate

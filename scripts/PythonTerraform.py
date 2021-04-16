@@ -15,17 +15,18 @@ def PythonTerraform(choice):
 	with open("scripts\\manifest.yaml", "r") as f:
 		config = yaml.safe_load(f)
 		f.close()
-	vars_dict = {
-		'desiredCapacity':config['params'][env_dict[str(choice)]]['desiredCapacity'],
-		'region':config['params'][env_dict[str(choice)]]['region'],
-		'ami-name':config['params']['default']['ami-name'],
-		'instance_type':config['params'][env_dict[str(choice)]]['instance_type'],
-		'profile':config['params'][env_dict[str(choice)]]['profile'],
-		'name':config['params'][env_dict[str(choice)]]['resourceName'],
-		's3_bucket_name':config['params'][env_dict[str(choice)]]['s3_bucket_name'],
-		'dynamodb_name':config['params'][env_dict[str(choice)]]['dynamodb_name'],
-		'environment':config['params'][env_dict[str(choice)]]['environment']
-	}
+	vars_dict = config['params'][env_dict[str(choice)]]
+	##vars_dict = {
+	##	'desiredCapacity':config['params'][env_dict[str(choice)]]['desiredCapacity'],
+	##	'region':config['params'][env_dict[str(choice)]]['region'],
+	##	'ami-name':config['params']['default']['ami-name'],
+	##	'instance_type':config['params'][env_dict[str(choice)]]['instance_type'],
+	##	'profile':config['params'][env_dict[str(choice)]]['profile'],
+	##	'name':config['params'][env_dict[str(choice)]]['name'],
+	##	's3_bucket_name':config['params'][env_dict[str(choice)]]['s3_bucket_name'],
+	##	'dynamodb_name':config['params'][env_dict[str(choice)]]['dynamodb_name'],
+	##	'environment':config['params'][env_dict[str(choice)]]['environment']
+	##}
 	print(vars_dict)
 	if env_dict[str(choice)] == "dev":
 		cwd = cwd + "\\dev"

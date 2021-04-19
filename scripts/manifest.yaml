@@ -1,7 +1,5 @@
 description: Terraform
 params:
-  default:
-    ami-name: ami-05b622b5fa0269787
   dev:
     desiredCapacity: 2
     dynamodb_name: gisc_terraform_remote_backend_state_lock_dev
@@ -12,6 +10,7 @@ params:
     s3_bucket_name: gisc-terraform-remote-backend-state-dev
     environment: dev
     s3_path: dev/terraform.tfstate
+    ami-name: ami-05b622b5fa0269787
 
   test:
     desiredCapacity: 1
@@ -23,3 +22,4 @@ params:
     s3_bucket_name: gisc-terraform-remote-backend-state-test
     environment: test
     s3_path: test/terraform.tfstate
+    ami-name: ami-05b622b5fa0269787

@@ -1,7 +1,7 @@
-terraform {
-  backend "s3" { 
-  }
-}
+##terraform {
+##  backend "s3" { 
+##  }
+##}
 
 resource "aws_s3_bucket" "terraform_remote_backend_state" {
 	bucket = "${var.s3_bucket_name}"
@@ -32,17 +32,17 @@ resource "aws_dynamodb_table" "terraform_remote_backend_state_lock" {
 
 }
 
-resource "aws_instance" "EC2_instance" {
-  ami = "${var.ami-name}"
-  instance_type = "${var.instance_type}"
-  count="${var.desiredCapacity}"
-  tags = {
-    Name = "${var.name}"
-    Environment = "${var.environment}"
-  }
-}
+##resource "aws_instance" "EC2_instance" {
+##  ami = "${var.ami-name}"
+##  instance_type = "${var.instance_type}"
+##  count="${var.desiredCapacity}"
+##  tags = {
+##    Name = "${var.name}"
+##    Environment = "${var.environment}"
+##  }
+##}
 
-output "ime" {
-   value = ["${aws_instance.EC2_instance.*.public_ip}"]
-}
+##output "ime" {
+##   value = ["${aws_instance.EC2_instance.*.public_ip}"]
+##}
 

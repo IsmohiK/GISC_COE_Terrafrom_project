@@ -1,34 +1,3 @@
-#resource "aws-alb" "alb" {
-# Name = "alb demo"
-# security_groups=[data.terraform_remote_state.sg.outputs.sg_elb_id]
-# subnets=[data.terraform_remote_state.networking.outputs.pub_sub_id]
-
-#listener {
-#   port               = 80
-#   protocol           = "HTTP"
-#}
-
-#target_groups = [
-#    {
-#      name_prefix      = "target"
-#      backend_protocol = "HTTP"
-#      backend_port     = 80
-#      target_type      = "instance"
-#}
-#]
-#health_check {
-#protocol="http"
-#path="/"
-#    healthy_threshold   = 5
-#    unhealthy_threshold = 5
-#    timeout             = 3
-#    target              = "HTTP:80/"
- #   interval            = 30
- # }
-
-#}
-
-
 resource "aws_lb" "alb" {
   name               = "gisc-terraform-alb"
   security_groups=[data.terraform_remote_state.sg.outputs.sg_elb_id]
